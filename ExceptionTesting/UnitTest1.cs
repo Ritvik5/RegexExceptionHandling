@@ -33,6 +33,19 @@ namespace ExceptionTesting
             Assert.AreEqual(expectedResult, result);
         }
 
+        [TestMethod]
 
+        public void GivenEmail_WhenValidate_ShouldReturnValid()
+        {
+            //Arrange
+            string expectedResult = "abc.xyz@bl.co.in";
+            UserRegistration test = new UserRegistration(expectedResult);
+
+            //Act
+            string result = test.ValidEmail();
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }

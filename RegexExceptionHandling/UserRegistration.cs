@@ -64,5 +64,29 @@ namespace RegexExceptionHandling
                 throw new Exception(ex.Message);
             }
         }
+
+        public string ValidEmail()
+        {
+            try
+            {
+                string emailPattern = "^[A-Za-z0-9]+([-_.+][A-Za-z0-9]+)?[@][A-Za-z]+[.][A-Za-z]{2,3}([.][a-z]{2})?$";
+                Regex regexObj = new Regex(emailPattern);
+                if (regexObj.IsMatch(this.data))
+                {
+                    Console.WriteLine("\nEntered input is correct!");
+                    return this.data;
+                }
+                else
+                {
+                    Console.WriteLine("\nEntered Input is incorrect!");
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
