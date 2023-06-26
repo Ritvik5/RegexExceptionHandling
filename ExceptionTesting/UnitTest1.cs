@@ -47,5 +47,19 @@ namespace ExceptionTesting
             //Assert
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestMethod]
+        public void GivenNumber_WhenValidate_ShouldReturnValid()
+        {
+            //Arrange
+            string expectedResult = "91 8456584565";
+            UserRegistration test = new UserRegistration(expectedResult);
+
+            //Act
+            string result = test.ValidMobileNumber();
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }

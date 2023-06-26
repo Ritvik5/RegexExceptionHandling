@@ -88,5 +88,29 @@ namespace RegexExceptionHandling
                 throw new Exception(ex.Message);
             }
         }
+
+        public string ValidMobileNumber()
+        {
+            try
+            {
+                string numberPattern = "^91[ ][6-9][0-9]{9}$";
+                Regex regexObj = new Regex(numberPattern);
+                if (regexObj.IsMatch(this.data))
+                {
+                    Console.WriteLine("\nEntered input is correct!");
+                    return this.data;
+                }
+                else
+                {
+                    Console.WriteLine("\nEntered Input is incorrect!");
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
