@@ -61,5 +61,19 @@ namespace ExceptionTesting
             //Assert
             Assert.AreEqual(expectedResult, result);
         }
+
+        [TestMethod]
+        public void GivenPassword_WhenValidate_ShouldReturnValid()
+        {
+            //Arrange
+            string expectedResult = "qWertyui@123";
+            UserRegistration test = new UserRegistration(expectedResult);
+
+            //Act
+            string result = test.ValidPassword();
+
+            //Assert
+            Assert.AreEqual(expectedResult, result);
+        }
     }
 }

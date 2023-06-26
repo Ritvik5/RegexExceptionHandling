@@ -112,5 +112,29 @@ namespace RegexExceptionHandling
                 throw new Exception(ex.Message);
             }
         }
+
+        public string ValidPassword()
+        {
+            try
+            {
+                string passPattern = "^(?=.*[A-Z])(?=.*[0-9])(?!.*[!@#$_].*[!@#$_])[A-Za-z0-9!@#$%_]{8,}$";
+                Regex regexObj = new Regex(passPattern);
+                if (regexObj.IsMatch(this.data))
+                {
+                    Console.WriteLine("\nEntered input is correct!");
+                    return this.data;
+                }
+                else
+                {
+                    Console.WriteLine("\nEntered Input is incorrect!");
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
