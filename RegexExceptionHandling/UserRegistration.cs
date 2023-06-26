@@ -40,5 +40,29 @@ namespace RegexExceptionHandling
                 throw new Exception(ex.Message);
             }
         }
+
+        public string ValidLastName()
+        {
+            try
+            {
+                string namePattern = "^[A-Z]{1}[A-Za-z]{3,}$";
+                Regex regexObj = new Regex(namePattern);
+
+                if (regexObj.IsMatch(data))
+                {
+                    Console.WriteLine("\nEntered input is correct!");
+                    return this.data;
+                }
+                else
+                {
+                    Console.WriteLine("\nEntered input is incorrect!");
+                    return "Invalid";
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
